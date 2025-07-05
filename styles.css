@@ -12,7 +12,6 @@
   --card-bg: #171717;
   --title-text: #e2e8f0;
   --subtitle: #9ca3af;
-  --other: #6d727c;
 }
 
 .light {
@@ -22,7 +21,6 @@
   --card-bg: #e8e8e8;
   --title-text: #171717;
   --subtitle: #9ca3af;
-  --other: #6d727c;
 }
 
 html {
@@ -55,6 +53,9 @@ h5,
 h6 {
   font-family: "Signika", sans-serif;
   font-weight: 700;
+}
+a {
+  text-decoration: none;
 }
 
 .page-title {
@@ -92,13 +93,24 @@ h6 {
 }
 
 .brand-link {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.brand-link svg {
+  width: 55px;
+  height: 40px;
+}
+.light .brand-link svg path {
+  fill: var(--fg);
+}
+.brand-link span {
+  font-size: 1rem;
+  line-height: 1.5;
   font-family: "Signika", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  text-decoration: none;
-  color: inherit;
+  color: var(--fg);
 }
 
 .nav-toggle {
@@ -179,7 +191,6 @@ h6 {
   font-family: "Signika", sans-serif;
   font-size: 1.5rem;
   line-height: 2rem;
-  text-decoration: none;
   color: inherit;
   display: block;
   padding: 0.5rem 0;
@@ -207,17 +218,30 @@ h6 {
   width: 100%;
 }
 
-/* Desktop Navigation */
 @media (max-width: 767px) {
   .nav-toggle {
     display: block;
   }
-}
-@media (min-width: 768px) {
-  /* .nav-toggle {
-    display: block;
-  } */
+  @media (max-width: 600px) {
+    .header {
+      padding-top: 1.5rem;
+    }
+    .brand-link {
+      gap: 5px;
+    }
+    .brand-link svg {
+      width: 40px;
+      height: 25px;
+    }
 
+    .brand-link span {
+      font-size: 0.7rem;
+      line-height: 1.2;
+    }
+  }
+}
+/* Desktop Navigation */
+@media (min-width: 768px) {
   .nav-menu {
     width: auto;
     max-height: none;
@@ -467,7 +491,7 @@ h6 {
   .greeting {
     text-align: center;
   }
-   .photo-card {
+  .photo-card {
     transform: rotate(0deg);
   }
   .stats {
@@ -639,13 +663,14 @@ h6 {
 .footer-name {
   font-family: "Signika", sans-serif;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 .footer-address {
   margin-top: 1rem;
   font-size: 1rem;
   line-height: 1.25rem;
-  color: var(--subtitle);
+  color: var(--fg);
 }
 
 .social-links {
@@ -653,7 +678,7 @@ h6 {
   margin: 0 auto;
   gap: 1.5rem;
   margin-top: 2rem;
-  color: var(--subtitle);
+  color: var(--fg);
 }
 
 .social-links a {
@@ -669,13 +694,15 @@ h6 {
   margin-top: 2rem;
   font-size: 1rem;
   line-height: 1rem;
-  color: var(--subtitle);
+  color: var(--fg);
   text-align: center;
 }
 
 .credit-link {
-  color: var(--other);
-  text-decoration: underline;
+  color: var(--fg);
+}
+.credit-link:hover {
+ text-decoration: underline;
 }
 
 /* Responsive adjustments */
