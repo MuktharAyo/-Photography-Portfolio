@@ -11,7 +11,7 @@
   --fg: #ffffff;
   --card-bg: #171717;
   --title-text: #e2e8f0;
-  --subtitle: #9ca3af;
+  --subtitle: #707080;
 }
 
 .light {
@@ -20,7 +20,7 @@
   --fg: #000000;
   --card-bg: #e8e8e8;
   --title-text: #171717;
-  --subtitle: #9ca3af;
+  --subtitle: #707080;
 }
 
 html {
@@ -548,7 +548,7 @@ a {
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
-  color: var(--subtitle);
+  color: var(--title-text);
 }
 
 .form-input,
@@ -566,7 +566,7 @@ a {
 }
 .form-input::placeholder,
 .form-textarea::placeholder {
-  color: var(--other);
+  color: var(--subtitle);
 }
 .form-input:focus,
 .form-textarea:focus {
